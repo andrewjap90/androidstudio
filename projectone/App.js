@@ -15,6 +15,8 @@ import {
 
 import HomeScreen from './Components/Home'
 import ProfileScreen from './Components/Profile'
+import OCR from './Components/OCR'
+import SpeechToText from './Components/SpeechToText'
 
 import News from './Components/News'
 
@@ -51,6 +53,22 @@ export default class App extends Component<Props> {
           onPress={() => this.setState({ selectedTab: 'profile' })}>
           <News />
       </TabNavigator.Item>
+      <TabNavigator.Item
+         selected={this.state.selectedTab === 'ocr'}
+         title="OCR"
+         renderIcon={() => <Icon name="camera" size={20} color="black" />}
+         renderSelectedIcon={() => <Icon name="camera" size={20} color="black" />}
+         onPress={() => this.setState({ selectedTab: 'ocr' })}>
+         <OCR />
+       </TabNavigator.Item>
+       <TabNavigator.Item
+          selected={this.state.selectedTab === 'SpeechToText'}
+          title="SpeechToText"
+          renderIcon={() => <Icon name="microphone" size={20} color="black" />}
+          renderSelectedIcon={() => <Icon name="microphone" size={20} color="black" />}
+          onPress={() => this.setState({ selectedTab: 'SpeechToText' })}>
+          <SpeechToText />
+        </TabNavigator.Item>
     </TabNavigator>
 
     );
